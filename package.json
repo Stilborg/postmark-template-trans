@@ -1,28 +1,30 @@
 {
-  "name": "node-ts-cli-template",
+  "name": "postmark-template-transfer",
   "version": "0.0.1",
-  "description": "A CLI template project",
+  "description": "A cli tool that can transfer templates from a server on one postmark account to a server on another postmark account",
   "main": "./lib/index.js",
   "scripts": {
-    "unit": "jest -i --env=node --colors --coverage test",
-    "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
-    "create": "npm run build && npm run test",
+    "test": "jest -i --env=node --colors --coverage test",
+    "dev": "nodemon --watch 'src/**/*.ts' --exec 'tsc -p . && node --inspect -r ts-node/register' src/index.ts",
+    "create": "npm run build && npm run inst",
     "build": "tsc -p .",
-    "test": "npm i -g && cli",
+    "inst": "npm i -g && transfer",
     "refresh": "rm -rf ./node_modules ./package-lock.json && npm install"
   },
   "keywords": [
     "cli",
-    "pizza",
+    "transfer",
     "typescript",
     "nodejs"
   ],
   "author": "Claus Stilborg",
   "license": "MIT",
   "bin": {
-    "cli": "./lib/index.js"
+    "transfer": "./lib/index.js"
   },
   "dependencies": {
+    "@types/bluebird": "^3.5.27",
+    "bluebird": "^3.5.5",
     "chalk": "^2.4.1",
     "clear": "^0.1.0",
     "commander": "^2.19.0",

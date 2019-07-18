@@ -13,3 +13,6 @@ lib/**/*
 
 # Ignore coverage data
 coverage
+
+# Ignore the secrets
+src/transfer-config.json
