@@ -20,7 +20,7 @@
   "author": "Claus Stilborg",
   "license": "MIT",
   "bin": {
-    "transfer": "./lib/index.js"
+    "pm_transfer": "./lib/index.js"
   },
   "dependencies": {
     "@types/bluebird": "^3.5.27",
